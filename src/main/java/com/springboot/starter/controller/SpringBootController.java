@@ -16,17 +16,15 @@ public class SpringBootController {
 	MessageService messageService;
 
 	@RequestMapping("starter")
-	public Response MyPring() {
-		Response re = new Response();
-		System.out.println("lel-------------------------------------");
-		return re;
+	public String MyPring() {
+		return "---------------------- Welcome to Spring Boot Starter! ---------------------------------";
 	}
 	@RequestMapping("get_messages")
 	public Response GetMessages(){
 		return messageService.run(new Response());
 	}
-	@RequestMapping("get_message/{msgId}")
-	public Response GetMessage(@PathVariable int msgId ){
-		return messageService.run(new Response(),msgId);
+	@RequestMapping("get_message/{msgIds}")
+	public Response GetMessage(@PathVariable String msgIds ){
+		return messageService.run(new Response(),msgIds);
 	}
 }

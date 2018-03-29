@@ -43,20 +43,23 @@ public class MessageDao implements MessageDaoI{
 	}
 
 	@Override
-	public HashMap<String, Object> getMessageById(int msg_id) {
+	public HashMap<String, Object> getMessageById(String msg_id) {
 		String sql="";
 		HashMap<String, Object> message =new HashMap<String, Object>();
     	try{
-    		sql="select msg_id as msgId, message from message where msg_id = :msg_id";
+    		sql="select msg_id as msgId, message from message where msg_id in (:msg_id)";
     		Session session = sessionFactory.openSession();
     		SQLQuery query = session.createSQLQuery(sql);
     		query.setParameter("msg_id",msg_id);
-    		if(query.list().size()>0){
-    			Object[] row = (Object[]) query.list().get(0);
+    		
+    		System.out.println("sql: "+sql);
+    		Debugger.debugObject("query", query);
+    		System.out.println("query.list().size(): "+query.list().size());
+    		for(int i=0;i<query.list().size();i++){
+    			Object[] row = (Object[]) query.list().get(i);
         		message.put(row[0].toString(), row[1].toString());
     		}
     		
-
     	}catch(Exception ex){
     		ex.printStackTrace();
     	}

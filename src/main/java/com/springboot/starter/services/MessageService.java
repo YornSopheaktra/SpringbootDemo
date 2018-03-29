@@ -11,10 +11,10 @@ import com.springboot.starter.ws.Response;
 public class MessageService {
 	@Autowired
 	MessageProcessor messageProcessor;
-	public Response run(Response respone, int msgId) {
+	public Response run(Response respone, String msgIds) {
 		try{
-			System.out.println("-------------------message id Requested: "+ msgId);
-			respone=messageProcessor.getMessage(respone,msgId);
+			System.out.println("-------------------message id Requested: "+ msgIds);
+			respone=messageProcessor.getMessage(respone,msgIds);
 			Debugger.debugObject("respone: ",respone);
 		}catch(Exception e){
 			e.printStackTrace();

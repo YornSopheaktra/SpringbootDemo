@@ -35,7 +35,6 @@ public class ApplicationTest {
 	
 	@Test
 	public void contextLoads() {
-		System.out.println("9999999999999999999999999");
 		getMessageTest();
 	}
 	
