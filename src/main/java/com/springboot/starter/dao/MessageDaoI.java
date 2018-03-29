@@ -1,11 +1,9 @@
 package com.springboot.starter.dao;
 
-import java.util.List;
-
-import com.springboot.starter.domain.Message;
+import java.util.HashMap;
 
 public interface MessageDaoI {
 
-	public List<Message> getMessages();
-	public List<Message> getMessageById(int patient_id);
+	public HashMap<String, Object> getMessages();
+	public HashMap<String, Object> getMessageById(int patient_id);
 }

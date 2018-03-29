@@ -1,6 +1,7 @@
 package com.springboot.starter.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,12 +16,17 @@ public class SpringBootController {
 	MessageService messageService;
 
 	@RequestMapping("starter")
-	public String MyPring() {
+	public Response MyPring() {
+		Response re = new Response();
 		System.out.println("lel-------------------------------------");
-		return "Hello My Spring Boot";
+		return re;
 	}
-	@RequestMapping("get_message")
-	public Response GetMessage(){
+	@RequestMapping("get_messages")
+	public Response GetMessages(){
 		return messageService.run(new Response());
+	}
+	@RequestMapping("get_message/{msgId}")
+	public Response GetMessage(@PathVariable int msgId ){
+		return messageService.run(new Response(),msgId);
 	}
 }
