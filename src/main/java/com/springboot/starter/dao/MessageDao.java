@@ -9,6 +9,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.springboot.starter.domain.Message;
 import com.springboot.starter.util.Debugger;
 
@@ -45,13 +47,22 @@ public class MessageDao implements MessageDaoI{
 	@Override
 	public HashMap<String, Object> getMessageById(String msg_id) {
 		String sql="";
+		String[] msg_ids = null;
+		msg_ids= msg_id.split(",");
+		
+		Gson gson = new GsonBuilder().serializeNulls().create();
+		String ss = gson.toJson(msg_ids);
+		ss.replace("[", "");
+		ss.replace("]","");
+		System.out.println("ss: "+ss);
+		Debugger.debugObject("msg_ids", msg_ids);
 		HashMap<String, Object> message =new HashMap<String, Object>();
     	try{
     		sql="select msg_id as msgId, message from message where msg_id in (:msg_id)";
     		Session session = sessionFactory.openSession();
     		SQLQuery query = session.createSQLQuery(sql);
-    		query.setParameter("msg_id",msg_id);
-    		
+    		//query.setParameter("msg_id",ss);
+    		query.setParameterList("msg_id", msg_ids);
     		System.out.println("sql: "+sql);
     		Debugger.debugObject("query", query);
     		System.out.println("query.list().size(): "+query.list().size());

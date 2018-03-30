@@ -29,8 +29,8 @@ public class ApplicationTest {
 	
 	@Before
 	public void initiatTest(){
-		setMsg_id("1");
-		setMessage("Poy");
+		setMsgId("1,2");
+		setMessage("Poy,Plouk");
 	}
 	
 	@Test
@@ -39,22 +39,42 @@ public class ApplicationTest {
 	}
 	
 	public void getMessageTest() {
-		String body = this.restTemplate.getForObject("/get_message/"+getMsg_id(), String.class);
+		String body = this.restTemplate.getForObject("/get_message/"+getMsgId(), String.class);
 		try {
 			JSONObject jObject  = new JSONObject(body);
-			String message = jObject.getJSONObject("data").getString(getMsg_id().toString());
-			Assert.assertEquals(getMessage(),message);
+			String message = "";
+			
+			String[] msgIdList = getMsgId().split(",");
+			String[] messageList =getMessage().split(",");
+			
+			System.out.println("msgIdList: "+msgIdList.length);
+			System.out.println("messageList: "+messageList.length);
+			
+			if(msgIdList.length !=messageList.length){
+				Assert.assertFalse(true);
+			}
+			
+			for (int i=0; i<msgIdList.length; i++) {
+				message = jObject.getJSONObject("data").getString(msgIdList[i].toString());
+				System.out.println("msgIdList[i]: "+msgIdList[i]);
+				System.out.println("messageList[i]: "+messageList[i]);
+				System.out.println("message: "+message);
+				Assert.assertEquals(messageList[i],message);
+			}
+			
+			
+			
 		} catch (JSONException e) {
 			Assert.assertFalse(true);
 			e.printStackTrace();
 		}
 	}
 
-	public String getMsg_id() {
+	public String getMsgId() {
 		return msg_id;
 	}
 
-	public void setMsg_id(String msg_id) {
+	public void setMsgId(String msg_id) {
 		this.msg_id = msg_id;
 	}
 
