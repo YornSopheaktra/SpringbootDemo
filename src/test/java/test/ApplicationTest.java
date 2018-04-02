@@ -29,8 +29,8 @@ public class ApplicationTest {
 	
 	@Before
 	public void initiatTest(){
-		setMsgId("1,2");
-		setMessage("Poy,Plouk");
+		setMsgId("1,2,3,4,5,6");
+		setMessage("Poy,vv,AA,BB,CC,dd");
 	}
 	
 	@Test
@@ -46,24 +46,23 @@ public class ApplicationTest {
 			
 			String[] msgIdList = getMsgId().split(",");
 			String[] messageList =getMessage().split(",");
-			
-			System.out.println("msgIdList: "+msgIdList.length);
-			System.out.println("messageList: "+messageList.length);
-			
+		
 			if(msgIdList.length !=messageList.length){
 				Assert.assertFalse(true);
 			}
-			
+			boolean isErorr = true;
+			String messages ="";
 			for (int i=0; i<msgIdList.length; i++) {
 				message = jObject.getJSONObject("data").getString(msgIdList[i].toString());
-				System.out.println("msgIdList[i]: "+msgIdList[i]);
-				System.out.println("messageList[i]: "+messageList[i]);
-				System.out.println("message: "+message);
-				Assert.assertEquals(messageList[i],message);
+				
+				if (!messageList[i].equalsIgnoreCase(message)){
+					isErorr = false;
+					messages += "\n expected: Id:"+msgIdList[i]+":{"+ messageList[i] +"} but actual: Id:"+msgIdList[i]+"{"+ message + "}";
+				}
+					
 			}
-			
-			
-			
+			System.out.println("messages: "+messages);
+			Assert.assertTrue(messages, isErorr);
 		} catch (JSONException e) {
 			Assert.assertFalse(true);
 			e.printStackTrace();
