@@ -4,8 +4,7 @@ package com.springboot.starter.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.springboot.starter.util.Debugger;
-import com.springboot.starter.ws.Response;
+import com.springboot.starter.ws.response.Response;
 
 @Service
 public class MessageService {
@@ -15,7 +14,7 @@ public class MessageService {
 		try{
 			System.out.println("-------------------message id Requested: "+ msgIds);
 			respone=messageProcessor.getMessage(respone,msgIds);
-			Debugger.debugObject("respone: ",respone);
+			//Debugger.debugObject("respone: ",respone);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -25,7 +24,7 @@ public class MessageService {
 		try{
 			System.out.println("-------------------message Requested ");
 			respone=messageProcessor.getMessages(respone);
-			Debugger.debugObject("respone getMessages: ",respone);
+			//Debugger.debugObject("respone getMessages: ",respone);
 		}catch(Exception e){
 			e.printStackTrace();
 		}

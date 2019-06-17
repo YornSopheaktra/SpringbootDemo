@@ -1,7 +1,8 @@
-package com.springboot.starter.ws;
+package com.springboot.starter.ws.response;
 
 import java.io.Serializable;
 import java.util.HashMap;
+
 public class Response implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
