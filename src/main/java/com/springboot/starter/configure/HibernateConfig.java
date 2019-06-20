@@ -46,7 +46,8 @@ public class HibernateConfig {
 
     public Properties hibernateProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL9Dialect");
+        //properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL9Dialect");
+        properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQL5Dialect");
         properties.setProperty("hibernate.show_sql", "false");
         properties.setProperty("hibernate.format_sql", "true");
         properties.setProperty("hibernate.hbm2ddl.auto", "update");
@@ -57,7 +58,7 @@ public class HibernateConfig {
         //properties.setProperty("hibernate.cache.use_query_cache", "true");
         //properties.setProperty("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.EhCacheRegionFactory");
         // properties.setProperty("net.sf.ehcache.configurationResourceName", "/cache/ehcache.xml");
-        properties.setProperty("hibernate.default_schema","${${evn}.datasource.schema}");
+        //properties.setProperty("hibernate.default_schema","${${evn}.datasource.schema}");
         return properties;
     }
 }

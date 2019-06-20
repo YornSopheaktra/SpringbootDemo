@@ -1,30 +1,32 @@
 package com.springboot.starter.ws.controller;
 
+import com.springboot.starter.services.PromotionProcessor;
+import com.springboot.starter.ws.response.Response;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.starter.services.MessageService;
-import com.springboot.starter.ws.response.Response;
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/")
+@Api(value = "Spring Boot Starter",description = "Spring Boot Description about API")
 public class SpringBootController {
-	
-	@Autowired
-	MessageService messageService;
 
-	@RequestMapping("home")
-	public String MyPring() {
+
+	@Autowired
+	PromotionProcessor promotionProcessor;
+
+	@GetMapping("home")
+	public String Welcome() {
 		return "---------------------- Welcome to Spring Boot Starter! ---------------------------------";
 	}
-	@RequestMapping("get_messages")
-	public Response GetMessages(){
-		return messageService.run(new Response());
-	}
-	@RequestMapping("get_message/{msgIds}")
-	public Response GetMessage(@PathVariable String msgIds ){
-		return messageService.run(new Response(),msgIds);
+
+	@PostMapping("promotion")
+	public Response promotion(HttpServletRequest request){
+		return  promotionProcessor.process(request,new Response());
 	}
 }

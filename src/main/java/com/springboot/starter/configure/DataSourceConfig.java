@@ -7,6 +7,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+
+import javax.sql.DataSource;
+import java.util.Properties;
 
 @Configuration
 @PropertySource(value = "classpath:vault.properties")
@@ -30,6 +34,27 @@ public class DataSourceConfig {
 
     private Logger log= LoggerFactory.getLogger(HibernateConfig.class);
 
+/*
+
+    @Bean
+    public DataSource dataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName(DRIVER);
+        dataSource.setUrl(URL);
+        dataSource.setUsername(USER_NAME);
+        dataSource.setPassword(PASSWORD);
+
+        log.info("=====>>>> Obtained database credentials from Vault Properties");
+        log.info("=====>>>> driver:" + dataSource.getCatalog());
+        log.info("=====>>>> url:" + dataSource.getUrl());
+        log.info("=====>>>> username:" + dataSource.getUsername());
+        log.info("=====>>>> schema:" + dataSource.getSchema());
+        return dataSource;
+    }
+*/
+
+
+
     @Bean
     public DriverManagerDataSource dataSource() {
         DriverManagerDataSource factoryBean = new DriverManagerDataSource();
@@ -46,6 +71,5 @@ public class DataSourceConfig {
         log.info("=====>>>> schema:" + factoryBean.getSchema());
         return factoryBean;
     }
-
 
 }
