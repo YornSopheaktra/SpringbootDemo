@@ -1,25 +1,25 @@
-package com.springboot.starter.domain;
+package com.springboot.starter.domain.Entity;
 
 import javax.persistence.*;
 import java.util.Date;
 
+@Table(name="sys_rule_mechanic_set")
 @Entity
-@Table(name="sys_conditions")
-public class SysConditions {
+public class SysRuleMechanicSet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name="id")
     private Integer id;
 
-    @Column(name = "sys_rule_mechanic_set__id")
-    private Integer sysRuleMechanicSetId;
-
-    @Column(name = "name")
+    @Column(name="name")
     private String name;
 
-    @Column(name = "description")
+    @Column(name="description")
     private String description;
+
+    @Column(name="status")
+    private String status;
 
     @Column(name = "created_at")
     private Date createdAt;
@@ -33,14 +33,8 @@ public class SysConditions {
     @Column(name = "updated_by")
     private Integer updatedBy;
 
-    @Column(name = "status")
-    private String status;
-
-    @Column(name = "aggregator_type")
-    private String aggregatorType;
-
-    @Column(name = "sequence_num")
-    private Integer sequenceNum;
+    @Column(name="mapping_rules_mechanics__id")
+    private Integer mappingRulesMechanicsId;
 
     public Integer getId() {
         return id;
@@ -48,14 +42,6 @@ public class SysConditions {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getSysRuleMechanicSetId() {
-        return sysRuleMechanicSetId;
-    }
-
-    public void setSysRuleMechanicSetId(Integer sysRuleMechanicSetId) {
-        this.sysRuleMechanicSetId = sysRuleMechanicSetId;
     }
 
     public String getName() {
@@ -72,6 +58,22 @@ public class SysConditions {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Integer getMappingRulesMechanicsId() {
+        return mappingRulesMechanicsId;
+    }
+
+    public void setMappingRulesMechanicsId(Integer mappingRulesMechanicsId) {
+        this.mappingRulesMechanicsId = mappingRulesMechanicsId;
     }
 
     public Date getCreatedAt() {
@@ -104,29 +106,5 @@ public class SysConditions {
 
     public void setUpdatedBy(Integer updatedBy) {
         this.updatedBy = updatedBy;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getAggregatorType() {
-        return aggregatorType;
-    }
-
-    public void setAggregatorType(String aggregatorType) {
-        this.aggregatorType = aggregatorType;
-    }
-
-    public Integer getSequenceNum() {
-        return sequenceNum;
-    }
-
-    public void setSequenceNum(Integer sequenceNum) {
-        this.sequenceNum = sequenceNum;
     }
 }

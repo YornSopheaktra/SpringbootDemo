@@ -1,25 +1,25 @@
-package com.springboot.starter.domain;
+package com.springboot.starter.domain.Entity;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Table(name="sys_rules")
 @Entity
-public class SysRules {
+@Table(name="sys_conditions")
+public class SysConditions {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name = "id")
     private Integer id;
 
-    @Column(name="name")
+    @Column(name = "sys_rule_mechanic_set__id")
+    private Integer sysRuleMechanicSetId;
+
+    @Column(name = "name")
     private String name;
 
-    @Column(name="description")
+    @Column(name = "description")
     private String description;
-
-    @Column(name="status")
-    private String status;
 
     @Column(name = "created_at")
     private Date createdAt;
@@ -33,12 +33,29 @@ public class SysRules {
     @Column(name = "updated_by")
     private Integer updatedBy;
 
+    @Column(name = "status")
+    private String status;
+
+    @Column(name = "aggregator_type")
+    private String aggregatorType;
+
+    @Column(name = "sequence_num")
+    private Integer sequenceNum;
+
     public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getSysRuleMechanicSetId() {
+        return sysRuleMechanicSetId;
+    }
+
+    public void setSysRuleMechanicSetId(Integer sysRuleMechanicSetId) {
+        this.sysRuleMechanicSetId = sysRuleMechanicSetId;
     }
 
     public String getName() {
@@ -55,14 +72,6 @@ public class SysRules {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public Date getCreatedAt() {
@@ -95,5 +104,29 @@ public class SysRules {
 
     public void setUpdatedBy(Integer updatedBy) {
         this.updatedBy = updatedBy;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getAggregatorType() {
+        return aggregatorType;
+    }
+
+    public void setAggregatorType(String aggregatorType) {
+        this.aggregatorType = aggregatorType;
+    }
+
+    public Integer getSequenceNum() {
+        return sequenceNum;
+    }
+
+    public void setSequenceNum(Integer sequenceNum) {
+        this.sequenceNum = sequenceNum;
     }
 }

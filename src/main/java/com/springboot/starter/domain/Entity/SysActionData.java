@@ -1,27 +1,38 @@
-package com.springboot.starter.domain;
+package com.springboot.starter.domain.Entity;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "action_data_history")
-public class ActionDataHistory {
+@Table(name = "sys_action_data")
+public class SysActionData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "action_history_id")
-    private Integer actionHistoryId;
+    @Column(name = "sys_action__id")
+    private Integer sysActionId;
 
     @Column(name = "key_name")
-    private String keyName;
+    private String keyName	;
 
     @Column(name = "key_value_type")
     private String keyValueType;
 
     @Column(name = "key_value")
     private String keyValue;
+
+    @Column(name = "status")
+    private  String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public Integer getId() {
         return id;
@@ -31,12 +42,12 @@ public class ActionDataHistory {
         this.id = id;
     }
 
-    public Integer getActionHistoryId() {
-        return actionHistoryId;
+    public Integer getSysActionId() {
+        return sysActionId;
     }
 
-    public void setActionHistoryId(Integer actionHistoryId) {
-        this.actionHistoryId = actionHistoryId;
+    public void setSysActionId(Integer sysActionId) {
+        this.sysActionId = sysActionId;
     }
 
     public String getKeyName() {

@@ -18,5 +18,12 @@ public class Response implements Serializable {
 	}
 	public void setData(HashMap<String, Object> data) {
 		this.data = data;
-	}	
+	}
+
+	@Override
+	public String toString(){
+		String res;
+		res="Response: "+ data.toString();
+		return res;
+	}
 }

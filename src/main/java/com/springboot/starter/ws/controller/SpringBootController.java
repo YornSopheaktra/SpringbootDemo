@@ -1,6 +1,7 @@
 package com.springboot.starter.ws.controller;
 
-import com.springboot.starter.services.PromotionProcessor;
+import com.springboot.starter.processor.PromotionProcessor;
+import com.springboot.starter.services.PromotionService;
 import com.springboot.starter.ws.response.Response;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class SpringBootController {
 
 
 	@Autowired
-	PromotionProcessor promotionProcessor;
+    PromotionService promotionService;
 
 	@GetMapping("home")
 	public String Welcome() {
@@ -27,6 +28,6 @@ public class SpringBootController {
 
 	@PostMapping("promotion")
 	public Response promotion(HttpServletRequest request){
-		return  promotionProcessor.process(request,new Response());
+		return  promotionService.run(request);
 	}
 }

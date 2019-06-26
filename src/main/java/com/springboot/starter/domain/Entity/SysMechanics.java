@@ -1,4 +1,4 @@
-package com.springboot.starter.domain;
+package com.springboot.starter.domain.Entity;
 
 import javax.persistence.*;
 import java.util.Date;

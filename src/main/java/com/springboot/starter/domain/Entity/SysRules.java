@@ -1,11 +1,11 @@
-package com.springboot.starter.domain;
+package com.springboot.starter.domain.Entity;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Table(name="sys_rule_mechanic_set")
+@Table(name="sys_rules")
 @Entity
-public class SysRuleMechanicSet {
+public class SysRules {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,9 +32,6 @@ public class SysRuleMechanicSet {
 
     @Column(name = "updated_by")
     private Integer updatedBy;
-
-    @Column(name="mapping_rules_mechanics__id")
-    private Integer mappingRulesMechanicsId;
 
     public Integer getId() {
         return id;
@@ -66,14 +63,6 @@ public class SysRuleMechanicSet {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public Integer getMappingRulesMechanicsId() {
-        return mappingRulesMechanicsId;
-    }
-
-    public void setMappingRulesMechanicsId(Integer mappingRulesMechanicsId) {
-        this.mappingRulesMechanicsId = mappingRulesMechanicsId;
     }
 
     public Date getCreatedAt() {

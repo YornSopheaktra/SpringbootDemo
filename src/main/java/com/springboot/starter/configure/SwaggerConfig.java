@@ -26,7 +26,7 @@ public class SwaggerConfig {
                 .build()
                 .apiInfo(apiEndPointsInfo());
     }
-/*  v2.6.1
+    /*v2.6.1
     private ApiInfo apiEndPointsInfo() {
         ApiInfo apiInfo = new ApiInfo(
                 "Spring Boot Starter",
