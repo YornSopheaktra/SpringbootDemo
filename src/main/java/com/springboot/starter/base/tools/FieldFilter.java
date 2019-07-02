@@ -8,6 +8,11 @@ import java.util.Map;
 import java.util.Set;
 import org.apache.commons.beanutils.PropertyUtils;
 
+
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
 public class FieldFilter {
     private String fieldName;
     private Object[] fieldValues;

@@ -1,7 +1,8 @@
 package com.springboot.starter.base.repo;
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.stereotype.Repository;
-
-public interface EntityRepo extends BaseEntityRepo {
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
+public interface EntityRepo extends BaseEntityRepo  {
 }

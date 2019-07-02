@@ -5,6 +5,10 @@ import org.hibernate.sql.JoinType;
 
 import java.io.Serializable;
 
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
 public class Association<T> implements Serializable {
     private static final long serialVersionUID = 2204191232367985114L;
 

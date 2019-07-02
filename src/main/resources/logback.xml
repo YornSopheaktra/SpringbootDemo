@@ -3,7 +3,7 @@
 
     <property resource="application.properties" />
 
-    <property name="HOME_LOG" value="/home/sopheaktra/Desktop/logs"/>
+    <property name="HOME_LOG" value="/opt/tomcat/logs"/>
 
     <!-- Send debug messages to System.out -->
     <appender name="FILE-ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">

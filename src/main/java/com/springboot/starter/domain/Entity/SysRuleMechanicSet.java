@@ -3,6 +3,10 @@ package com.springboot.starter.domain.Entity;
 import javax.persistence.*;
 import java.util.Date;
 
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
 @Table(name="sys_rule_mechanic_set")
 @Entity
 public class SysRuleMechanicSet {

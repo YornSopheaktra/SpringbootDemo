@@ -13,6 +13,10 @@ import org.springframework.transaction.PlatformTransactionManager;
 import javax.sql.DataSource;
 import java.util.Properties;
 
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
 @Configuration
 @PropertySource(value = "classpath:vault.properties")
 public class HibernateConfig {

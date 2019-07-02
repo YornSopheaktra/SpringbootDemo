@@ -2,6 +2,11 @@ package com.springboot.starter.domain.Entity;
 
 import javax.persistence.*;
 
+
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
 @Entity
 @Table(name = "sys_campaign_service_type_set")
 public class SysCampaignServiceTypeSet {

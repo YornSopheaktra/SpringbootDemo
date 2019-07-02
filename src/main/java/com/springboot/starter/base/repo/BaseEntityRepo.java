@@ -16,6 +16,11 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
+
 @Transactional(propagation = Propagation.NESTED, isolation = Isolation.READ_COMMITTED)
 public interface BaseEntityRepo {
 
@@ -30,11 +35,6 @@ public interface BaseEntityRepo {
     String getDatabaseName() throws SQLException;
 
     String getDriverName() throws SQLException;
-
-/*
-    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED)
-    <T> List<T> list(Class<T> clazz, boolean distinctRootEntity, boolean resultTransformer, List<Association> associations, List<AssociationFilter> associationFilters, List<Criterion> criterions, List<Projection> projections, List<AliasField> aliases, Integer firstResult, Integer maxResults, List<Order> orders, LockType lockType);
-*/
 
     @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED)
     <T> List<T> list(Class<T> clazz, Order order);

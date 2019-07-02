@@ -1,8 +1,11 @@
 package com.springboot.starter.domain.Entity;
 
-
 import javax.persistence.*;
 
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
 @Table(name="sys_campaign")
 @Entity
 public class SysCampaign {

@@ -1,6 +1,9 @@
 package com.springboot.starter.base.tools;
 
-
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
 public class AssociationFilter {
     private String associationPath;
     private FieldFilter fieldFilter;

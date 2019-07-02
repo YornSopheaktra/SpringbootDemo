@@ -12,6 +12,7 @@ import org.hibernate.transform.Transformers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.Entity;
@@ -22,7 +23,11 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
-@Service
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
+@Repository
 public abstract class BaseEntityRepoImp implements BaseEntityRepo {
 
     @Autowired

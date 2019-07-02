@@ -3,6 +3,10 @@ package com.springboot.starter.domain.Entity;
 import javax.persistence.*;
 import java.util.Date;
 
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
 @Entity
 @Table(name = "events")
 public class Events {

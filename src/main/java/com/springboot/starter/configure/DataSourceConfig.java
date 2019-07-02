@@ -12,6 +12,11 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import javax.sql.DataSource;
 import java.util.Properties;
 
+
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
 @Configuration
 @PropertySource(value = "classpath:vault.properties")
 public class DataSourceConfig {

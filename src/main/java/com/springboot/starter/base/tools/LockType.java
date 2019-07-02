@@ -4,6 +4,11 @@ import org.hibernate.LockMode;
 
 import java.util.Objects;
 
+
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
 public class LockType {
     private LockMode mode;
     private String name;

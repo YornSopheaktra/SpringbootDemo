@@ -1,5 +1,10 @@
 package com.springboot.starter.base.tools;
 
+
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
 public class FilterMode {
     public static final FilterMode EQUALS = new FilterMode(0);
     public static final FilterMode GREATER_THAN = new FilterMode(1);

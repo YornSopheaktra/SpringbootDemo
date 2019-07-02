@@ -8,6 +8,10 @@ import org.slf4j.LoggerFactory;
 import java.io.Serializable;
 import java.util.*;
 
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
 public class BaseCriteria<T> implements Serializable {
 
     protected static Logger logger = LoggerFactory.getLogger(BaseCriteria.class);

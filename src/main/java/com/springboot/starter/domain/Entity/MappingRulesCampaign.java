@@ -4,6 +4,10 @@ package com.springboot.starter.domain.Entity;
 import javax.persistence.*;
 import java.util.Date;
 
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
 @Table(name = "mapping_rules_campaign")
 @Entity
 public class MappingRulesCampaign {

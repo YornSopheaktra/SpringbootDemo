@@ -2,6 +2,10 @@ package com.springboot.starter.base.tools;
 
 import java.util.Objects;
 
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
 public class AliasField {
     private String fieldName;
     private String aliasName;

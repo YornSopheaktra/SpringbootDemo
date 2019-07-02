@@ -2,6 +2,10 @@ package com.springboot.starter.domain.Entity;
 
 import javax.persistence.*;
 
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
 @Entity
 @Table(name = "mapping_rules_mechanics")
 public class MappingRulesMechanics {

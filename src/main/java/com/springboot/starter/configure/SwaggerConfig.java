@@ -13,6 +13,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.net.UnknownHostException;
 
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
 @EnableSwagger2
 @Configuration
 public class SwaggerConfig {

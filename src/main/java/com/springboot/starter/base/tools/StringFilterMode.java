@@ -1,5 +1,10 @@
 package com.springboot.starter.base.tools;
 
+
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
 public class StringFilterMode extends FilterMode {
     public static final FilterMode CONTAINS = new FilterMode(50);
     public static final FilterMode DOES_NOT_CONTAIN = new FilterMode(51);

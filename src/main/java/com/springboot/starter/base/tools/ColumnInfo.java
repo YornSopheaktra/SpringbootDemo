@@ -3,6 +3,11 @@ package com.springboot.starter.base.tools;
 import java.io.Serializable;
 import org.apache.commons.lang.StringUtils;
 
+
+/*
+ * Author: Sopheaktra Yorn
+ * Date: 02-07-2019
+ */
 public class ColumnInfo implements Serializable {
     /** */
     private static final long serialVersionUID = 7635446172954256268L;
