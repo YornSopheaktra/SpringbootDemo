@@ -10,6 +10,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Collections;
+import java.util.Map;
 
 /*
  * Author: Sopheaktra Yorn
@@ -20,17 +22,18 @@ import javax.servlet.http.HttpServletRequest;
 @Api(value = "Spring Boot Starter",description = "Spring Boot Description about API")
 public class SpringBootController {
 
-	@Autowired
-	ApplicationContext ctx;
+	@GetMapping("/")
+	public Map<String, Object> greeting() {
+		return Collections.singletonMap("message", "Hello World");
+	}
 
 	@Autowired
     PromotionService promotionService;
 
 	@GetMapping("home")
 	public String Welcome() {
-		int beanCount = ctx.getBeanDefinitionCount();
-		String env =ctx.getEnvironment().toString();
-		return "---------------------- Welcome to Spring Boot Starter! --------------------------------- \n Bean counted: "+ beanCount +"\n" + env;
+		System.out.println("============================XXXXX===============================");
+		return "---------------------- Welcome to Spring Boot Starter! ---------------------------------";
 	}
 
 	@PostMapping("promotion")

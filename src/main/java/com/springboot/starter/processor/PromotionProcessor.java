@@ -23,7 +23,7 @@ public class PromotionProcessor {
     private Logger log = LoggerFactory.getLogger(PromotionProcessor.class);
     public ResponseDTO process(RequestDTO request, ResponseDTO response) {
 
-        SysCampaign sysCampaign = sysCampaignDao.getSysCampaignById(Integer.valueOf(request.getData().get("promoionId").toString()));
+        SysCampaign sysCampaign = sysCampaignDao.getSysCampaignById(Integer.valueOf(request.getData().get("promotionId").toString()));
 
         HashMap<String, Object> data = new HashMap<>();
         data.put("sysCampaign",sysCampaign);
