@@ -20,6 +20,7 @@ import org.springframework.restdocs.JUnitRestDocumentation;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
@@ -95,6 +96,7 @@ public class StarterApplicationTest {
 		mockMvc.perform(post("/promotion").contentType(MediaType.APPLICATION_JSON_UTF8)
 				.content(requestJson))
 				.andExpect(status().isOk())
+				.andExpect(MockMvcResultMatchers.content().string(containsString("T")))
 				.andDo(document("Promotion"));
 	}
 }

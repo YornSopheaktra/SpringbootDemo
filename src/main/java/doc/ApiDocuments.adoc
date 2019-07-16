@@ -1,0 +1,53 @@
+
+//image::spring-boot.png[OK]
+= Starter API - Reference Documentation
+Developer: Sopheaktra Yorn Date: {localdate}
+v1.0.0
+:sectnums:
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 6
+:sectlinks:
+
+
+(C) 2019 The original author.
+
+NOTE: This documents will cover for all Controller API and Describe for all APIs as well.
+
+== Document Version
+[cols="3,3,5"]
+|===
+|Version|Date|Description
+
+|1.0.0
+|05-07-2019
+|Initialize Spring Boot Start
+
+|===
+== Http Request
+==== Http Header
+[cols="3,6"]
+|===
+|Name|Value
+
+|content-type
+|application/json
+
+|Authorization
+|Bearer bee1eae8-825a-4c6b-bfbf-3076f91ac9da
+
+|===
+
+== Promotion
+=== Request
+include::../../../../target/generated-snippets/Promotion/curl-request.adoc[]
+=== Response
+include::../../../../target/generated-snippets/Promotion/http-response.adoc[]
+
+== Home
+=== Request
+include::../../../../target/generated-snippets/home/curl-request.adoc[]
+=== Response
+include::../../../../target/generated-snippets/home/http-response.adoc[]
+

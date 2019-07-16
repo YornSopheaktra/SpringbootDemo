@@ -19,6 +19,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/")
+
 @Api(value = "Spring Boot Starter",description = "Spring Boot Description about API")
 public class SpringBootController {
 
@@ -37,7 +38,7 @@ public class SpringBootController {
 	}
 
 	@PostMapping("promotion")
-	public ResponseDTO promotion(HttpServletRequest httpRequest, @RequestBody RequestDTO requestDTO){
-		return  promotionService.run(httpRequest,requestDTO);
+	public ResponseDTO promotion( @RequestBody RequestDTO requestDTO){
+		return  promotionService.run(requestDTO);
 	}
 }

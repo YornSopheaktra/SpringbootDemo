@@ -1,0 +1,40 @@
+
+==== Http Payload Request
+NOTE: This is for call promotion checking condition
+
+URL: http://localhost:8080/starter/promotion
+[source,json,options="nowrap"]
+----
+{
+  "accountId": 123456775,
+  "data": {
+    "promotionId": 1
+  },
+  "date": "2019-07-05T08:07:27.669Z",
+  "requestId": "3454404034848",
+  "sessionId": "232323"
+}
+----
+=== Response
+IMPORTANT: Testing te ajurk don't focus to much
+[source,json,option="nowrap"]
+----
+{
+  "requestId": null,
+  "accountId": null,
+  "sessionId": null,
+  "date": null,
+  "data": {
+    "sysCampaign": {
+      "id": 1,
+      "name": "SCG_PROMOION",
+      "description": null,
+      "status": null,
+      "sysCampaignCategoryId": 1,
+      "promotionType": "scg_promotin",
+      "promotionModel": "scg_promotin",
+      "stockAccountId": "121"
+    }
+  }
+}
+----

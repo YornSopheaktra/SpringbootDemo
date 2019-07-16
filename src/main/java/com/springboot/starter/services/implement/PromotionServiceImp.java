@@ -24,7 +24,7 @@ public class PromotionServiceImp implements PromotionService {
     PromotionProcessor promotionProcessor;
 
     @Override
-    public ResponseDTO run(HttpServletRequest httpRequest, RequestDTO request) {
+    public ResponseDTO run(RequestDTO request) {
         log.info("Request {} ", request.toString());
         ResponseDTO response = new ResponseDTO();
         try {
