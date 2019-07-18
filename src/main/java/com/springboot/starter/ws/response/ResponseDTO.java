@@ -1,8 +1,13 @@
 package com.springboot.starter.ws.response;
 
 import com.springboot.starter.utils.ToString;
+import org.joda.time.Days;
+import org.joda.time.LocalDate;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -16,8 +21,26 @@ public class ResponseDTO implements Serializable {
 	private String requestId;
 	private Integer accountId;
 	private String sessionId;
-	private Date date;
+	private Timestamp timestamp;
 	private HashMap<String,Object> data;
+	private String code;
+	private String message;
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return requestId;
@@ -43,20 +66,20 @@ public class ResponseDTO implements Serializable {
 		this.sessionId = sessionId;
 	}
 
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
 	public HashMap<String, Object> getData() {
 		return data;
 	}
 
 	public void setData(HashMap<String, Object> data) {
 		this.data = data;
+	}
+
+	public Timestamp getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(Timestamp timestamp) {
+		this.timestamp = timestamp;
 	}
 
 	public static ResponseDTO newObject(ResponseDTO re){

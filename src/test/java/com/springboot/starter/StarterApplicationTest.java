@@ -20,6 +20,9 @@ import org.springframework.restdocs.JUnitRestDocumentation;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.RequestBuilder;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
@@ -88,15 +91,16 @@ public class StarterApplicationTest {
 
 	@Test
 	public void TestPromotion() throws Exception {
-		JSONObject jsObject = new JSONObject();
-		jsObject.put("promotionId",1);
+		RequestDTO request = new RequestDTO();
+		HashMap<String,Object> data= new HashMap<>();
 
-		String requestJson = jsObject.toString();
-
+		data.put("promotionId",1);
+		request.setData(data);
 		mockMvc.perform(post("/promotion").contentType(MediaType.APPLICATION_JSON_UTF8)
-				.content(requestJson))
+				.content(request.toString()))
 				.andExpect(status().isOk())
-				.andExpect(MockMvcResultMatchers.content().string(containsString("T")))
+				.andDo(print())
+				.andExpect(MockMvcResultMatchers.content().string(containsString("id")))
 				.andDo(document("Promotion"));
 	}
 }

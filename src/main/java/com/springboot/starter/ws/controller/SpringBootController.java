@@ -7,6 +7,8 @@ import com.springboot.starter.ws.response.ResponseDTO;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +21,6 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/")
-
 @Api(value = "Spring Boot Starter",description = "Spring Boot Description about API")
 public class SpringBootController {
 
@@ -38,7 +39,7 @@ public class SpringBootController {
 	}
 
 	@PostMapping("promotion")
-	public ResponseDTO promotion( @RequestBody RequestDTO requestDTO){
-		return  promotionService.run(requestDTO);
+	public ResponseEntity promotion(@RequestBody RequestDTO requestDTO){
+		  return new ResponseEntity(promotionService.run(requestDTO), HttpStatus.OK);
 	}
 }
