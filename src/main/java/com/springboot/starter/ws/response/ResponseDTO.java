@@ -6,10 +6,13 @@ import org.joda.time.LocalDate;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 /*
  * Author: Sopheaktra Yorn
@@ -94,4 +97,18 @@ public class ResponseDTO implements Serializable {
 		res= ToString.pgson.toJson(this);
 		return res;
 	}
+
+
+	public static void main(String[] args) throws ParseException {
+
+		List<String> a= new ArrayList<>();
+
+		if (a!=null)
+			System.out.println("not nul");
+
+		for (String b:a) {
+
+		}
+
+		}
 }

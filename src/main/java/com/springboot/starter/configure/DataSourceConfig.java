@@ -67,7 +67,7 @@ public class DataSourceConfig {
         factoryBean.setUrl(URL);
         factoryBean.setUsername(USER_NAME);
         factoryBean.setPassword(PASSWORD);
-        //factoryBean.setSchema(SCHEMA);
+        factoryBean.setSchema(SCHEMA);
 
         log.info("=====>>>> Obtained database credentials from Vault Properties");
         log.info("=====>>>> driver:" + factoryBean);
