@@ -1,0 +1,57 @@
+ *,html,body{
+             font-family: sans-serif !important;
+             padding:0px;
+             margin:0px;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+        table.customer th ,table.customer  td{
+            padding:10px 0px !important;
+            font-family: 'SF UI Text';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 9px;
+            line-height: 11px;
+            color: #000000;
+            text-align: left;
+         }
+        @media print {
+            *,body,
+            html {
+                -webkit-print-color-adjust: exact;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                margin: 0px !important;
+                padding: 0px !important;
+            }
+            html, body {
+                width: 21cm !important;
+                min-height: 29.7cm !important;
+            }
+            @page {
+                margin: 0px  !important;
+                size: A4 !important;
+                padding: 0px !important;
+            }
+            @page :footer {
+                display: none !important;
+            }
+            @page :header {
+                display: none !important;
+            }
+            table.customer th{
+                padding:10px 0px !important;
+            }
+            table.customer td{
+                padding:10px 0px !important;
+            }
+            .main-pdf{
+                width: 21cm !important;
+                min-height: 29.7cm !important;
+            }
+        }
+
